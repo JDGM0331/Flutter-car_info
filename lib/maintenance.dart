@@ -14,7 +14,7 @@ class MaintenancePage extends StatelessWidget {
       body: Padding(
         padding:  const EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
               'Selecciona el tipo de mantenimiento que desea realizar: ', 
