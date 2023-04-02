@@ -1,6 +1,7 @@
 // ignore_for_file: implementation_imports, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'maintenance.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -154,7 +155,7 @@ class BottomMenu extends StatelessWidget {
           case 1:
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => HomeScreen())
+              MaterialPageRoute(builder: (context) => MaintenancePage())
             );
             break;
           case 2:
