@@ -1,7 +1,8 @@
-// ignore_for_file: implementation_imports, prefer_const_constructors
+// ignore_for_file: implementation_imports, prefer_const_constructors, sort_child_properties_last
 
 import 'package:flutter/material.dart';
 import 'about_us.dart';
+import 'data.dart';
 import 'maintenance.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -15,6 +16,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: const [
             TopBar(), // Barra de navegación superior
+            FeaturedListView(), // Vista de lista de populares
             PopularDivider() // Divisor de populares
           ],
         ),
@@ -171,12 +173,103 @@ class BottomMenu extends StatelessWidget {
   }
 }
 
+// VISTA DE LISTA DE DESTACADOS
+class FeaturedListView extends StatelessWidget {
+  const FeaturedListView({super.key});
 
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 320,
+      child: ListView.separated(
+        padding: const EdgeInsets.symmetric(
+          vertical: 20,
+          horizontal: 30
+        ),
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (BuildContext context, int index){
+          return GestureDetector( // Detector de gestos 
+            child: Card(
+              image: carrousellPrincipal[index].image,
+              name: carrousellPrincipal[index].name,
+              model: carrousellPrincipal[index].model,
+            ),
+            onTap: null,
+          );
+        }, 
+        separatorBuilder: (context, index) => const SizedBox(
+          width: 20,
+        ), 
+        itemCount: carrousellPrincipal.length
+      )
+    );
+  }
+}
 
+// TARJETA DE VISTA PARA AUTOS
+class Card extends StatelessWidget {
 
+  final String image;
+  final String name;
+  final String model;
 
+  const Card({
+    Key ? key, 
+    required this.image,
+    required this.name,
+    required this.model
+  }) : super(key: key);
 
-
-
-
-
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(image),
+          fit: BoxFit.cover
+        ), 
+        borderRadius: BorderRadius.all(
+          Radius.circular(30)
+        ),
+      ),
+      height: 300,
+      width: 200,
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(
+            Radius.circular(1)
+          ), 
+          gradient: LinearGradient(
+            begin: FractionalOffset.topCenter,
+            end: FractionalOffset.bottomCenter, 
+            colors: [
+              Colors.grey.withOpacity(0.0),
+              Colors.black38
+            ],
+            stops: const[0.5, 1.0]
+          )
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            vertical: 10,
+            horizontal: 20
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                name, 
+                style: Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.white)
+              ),
+              Text(
+                model, 
+                style: Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.white)
+              )
+            ]
+          )
+        )
+      )
+    );
+  }
+}
