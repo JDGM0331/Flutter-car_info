@@ -67,14 +67,14 @@ class TopBar extends StatelessWidget {
                     style: TextStyle(
                     fontWeight: FontWeight.w400,
                     color: Color.fromARGB(255, 255, 255, 255),
-                    fontSize: 30)
+                    fontSize: 25)
                   ),
                   Text(
                     'Nuevos vehiculos populares',
                     style: TextStyle(
                       fontWeight: FontWeight.w100,
                       color: Color.fromARGB(255, 255, 255, 255),
-                      fontSize: 20
+                      fontSize: 17
                     )
                   )
                 ],
@@ -106,7 +106,7 @@ class PopularDivider extends StatelessWidget {
           Text(
             'Vehiculos Únicos', 
             style: TextStyle(
-              fontSize: 26,
+              fontSize: 22,
               fontWeight: FontWeight.bold,
               color: Colors.white
             ),
