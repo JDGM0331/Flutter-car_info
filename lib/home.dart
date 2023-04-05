@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'about_us.dart';
 import 'data.dart';
+import 'detail.dart';
 import 'maintenance.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -194,7 +195,15 @@ class FeaturedListView extends StatelessWidget {
               name: carrousellPrincipal[index].name,
               model: carrousellPrincipal[index].model,
             ),
-            onTap: null,
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => DetailView(
+                    items: carrousellPrincipal[index]
+                  )
+                )
+              );
+            },
           );
         }, 
         separatorBuilder: (context, index) => const SizedBox(

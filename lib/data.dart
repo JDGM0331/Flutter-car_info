@@ -1,8 +1,8 @@
 import 'models.dart';
 
 var carrousellPrincipal = const [
-  Car('Vehiculo 1', 'Modelo: 2022', 'assets/images/Car-1.jpg'),
-  Car('Vehiculo 2', 'Modelo: 2023', 'assets/images/Car-2.jpg'),
-  Car('Vehiculo 3', 'Modelo: 2022', 'assets/images/Car-3.jpg'),
-  Car('Vehiculo 4', 'Modelo: 2024', 'assets/images/Car-4.jpg')
+  Car('Bugatti Divo', 'Modelo: 2023', 'assets/images/Bugatti Divo.jpg'),
+  Car('Chevrolet Camaro', 'Modelo: 2022', 'assets/images/Chevrolet Camaro.jpg'),
+  Car('Bugatti Chiron SP', 'Modelo: 2023', 'assets/images/Bugatti Chiron SP.jpg'),
+  Car('Mazda Miata', 'Modelo: 1995', 'assets/images/Mazda Miata.jpg')
 ];
